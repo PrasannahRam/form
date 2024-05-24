@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background: linear-gradient(120deg,rgb(164, 84, 131),rgb(114, 113, 189));
+            overflow: hidden;
+        }
+        .center {
+            padding: 50px 0 0 0px;
+            padding-bottom: 0;
+            border-radius: 10px;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: rgb(222, 215, 243);
+            width:380px;
+        }
+
+        .center form {
+            transform: translate(-2.5%, -50%);
+            padding: 40px ;
+            padding-top: 50px;
+            padding-bottom: 0;
+        }
+        .txt_field label{
+            font-size: 20px;
+            color: rgb(74, 76, 76);
+            position: absolute;
+            transform: translate(10%,-140%);
+            pointer-events: none;
+        }
+
+        .txt_field input {
+            
+            font-size: 18px;
+            padding: 10px;
+            width: 100%;
+            background-color: transparent;
+            border-radius: 4px;
+            border-color:rgb(76, 76, 233); 
+        }
+
+        h1 {
+            margin-bottom: 0;
+            transform: translate(0%, -100%);
+            text-align: center;
+        }
+
+        .butt form {
+            font-size: large;
+            margin: -5%;
+            margin-bottom: 0;
+        }
+        input[type='button']{
+            font-size: 20px;
+            border: solid 1px white;
+            padding: 5px;
+            background: linear-gradient(rgb(83, 147, 187),rgb(84, 55, 216));
+            border-radius: 5px;
+        }
+        input[type='button']:hover{
+            background: linear-gradient(rgb(83, 147, 250),rgb(84, 55, 300));
+            cursor:pointer;
+            font-size: 20.05px;
+            margin-bottom: -0.05px;
+        }
+        input:hover{
+            border-color: blue;
+
+        }
+        
+    </style>
+</head>
+
+
+<body>
+    <script>
+        function create_label(id) {
+            document.getElementById(id).style.transform =" translate(10%,-300%)";
+            document.getElementById(id).style.color='black';
+            let text = document.getElementById(id).innerHTML;
+            if (text[text.length-1]!==':'){
+                document.getElementById(id).innerHTML=text+':';
+            }
+            
+        }
+        
+        
+    </script>
+    <div class="center">
+        <h1>Sign-in</h1>
+        <div>
+            <form>
+                <div class="txt_field">
+                    <input type="text" required  oninput="create_label('user_l')" id="user_i">
+                   <label id="user_l">User name</label> 
+                    
+            </form>
+        </div>
+        <div>
+            <form>
+                <div class="txt_field">
+                    <input type="text" required oninput="create_label('pwd_l')" id="pwd_i">
+                    <label id="pwd_l">Password</label> 
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <div class="butt" style="margin: 0;">
+        <p>
+            <center>
+                <form>
+                    <input type="button" name="number" id="num" required value="  Sign-in  ">
+                </form>
+            </center>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
